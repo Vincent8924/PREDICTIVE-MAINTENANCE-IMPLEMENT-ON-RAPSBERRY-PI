@@ -1,0 +1,41 @@
+Create the Service File:
+    sudo nano /etc/systemd/system/edge_ai.service
+
+Paste the following content into the Nano editor. This code has been precisely bound to username (vincent), working directory, and the Python virtual environment (fyp_env):
+    [Unit]
+    Description=Edge AI Predictive Maintenance Gateway (Lite-Hybrid-AE)
+    After=network.target
+    After=mosquitto.service
+
+    [Service]
+    Type=simple
+    User=vincent
+    WorkingDirectory=/home/vincent
+    # Use the Python interpreter from your virtual environment
+    ExecStart=/home/vincent/fyp_env/bin/python /home/vincent/pi_gateway_ai.py
+    # Auto-restart the AI gateway if it crashes
+    Restart=always
+    RestartSec=5
+
+    [Install]
+    WantedBy=multi-user.target
+
+Activation Commands:
+    #1. Reload the systemd manager configuration
+    sudo systemctl daemon-reload
+
+    #2. Enable the service to start automatically on boot
+    sudo systemctl enable edge_ai.service
+
+    #3. Start the service immediately
+    sudo systemctl start edge_ai.service
+
+Maintenance Cheat Sheet:
+    #1. Check Status
+    sudo systemctl status edge_ai.service
+    #2. Monitor Live Logs
+    sudo journalctl -u edge_ai.service -f
+    #3. Restart Service
+    sudo systemctl restart edge_ai.service
+    #4. Stop Service
+    sudo systemctl stop edge_ai.service
