@@ -49,7 +49,7 @@ The core of this system utilizes a **Lite-Hybrid-AE (1D-CNN + LSTM Autoencoder)*
    ```
 
 ### 2. Initialize the MQTT broker and start the AI gateway:
-   python pi_gateway_ai.py
+    python pi_gateway_ai.py
 
 ### 3. Start the data logger to populate the SQLite database on PC:
     python data_logger.py
