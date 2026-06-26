@@ -65,3 +65,6 @@ The core of this system utilizes a **Lite-Hybrid-AE (1D-CNN + LSTM Autoencoder)*
     streamlit run app.py
     ```
 2. The dashboard will track live vibrations, MSE vs. threshold limits, and hardware thermals locally.
+
+## 🎥 Demonstration
+    A short demonstration of the system operating on a physical air conditioning compressor can be viewed here: https://youtu.be/lzvHtOjECMs.
