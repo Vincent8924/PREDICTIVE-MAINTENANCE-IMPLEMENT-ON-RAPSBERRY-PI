@@ -49,14 +49,17 @@ The core of this system utilizes a **Lite-Hybrid-AE (1D-CNN + LSTM Autoencoder)*
    ```
 
 ### 2. Initialize the MQTT broker and start the AI gateway:
-    ```bash 
-    python pi_gateway_ai.py
-    ```
+   ```bash
+   python pi_gateway_ai.py
+   ```
 
 ### 3. Start the data logger to populate the SQLite database on PC:
     ```bash 
     python data_logger.py
     ```
+    ```bash
+   python pi_gateway_ai.py
+   ```
 
 ### 4. Sensor Node (ESP32)
     1. Open ESP32_Sender.ino in the Arduino IDE.
@@ -67,5 +70,8 @@ The core of this system utilizes a **Lite-Hybrid-AE (1D-CNN + LSTM Autoencoder)*
     1. Launch the interactive Human-Computer Interaction (HCI) UI:
     ```bash 
     streamlit run app.py
+    ```
+    ```bash
+    python pi_gateway_ai.py
     ```
     2. The dashboard will track live vibrations, MSE vs. threshold limits, and hardware thermals locally.
